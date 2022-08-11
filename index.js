@@ -18,17 +18,15 @@ function getRandomQuestion () {
 }
 getRandomQuestion ()
 
-let n = Math.ceil(Math.random() * 3)
-console.log(n)
+
+function getRandomAnswer () {
+    let n = Math.ceil(Math.random() * 3)
     arrClass = [
         'answer2__order3',
         'answer2__order1',
         'answer2__order2'
     ]
-    answer2.classList.toggle(`${arrClass[n]}`)
-console.log(arrClass[n])
-
-function getRandomAnswer () {
+    answer2.classList.toggle(`${arrClass[n]}`)    
     answ2 = oper1 * oper2
     answ1 = Math.ceil(Math.random() * 81)
     answer1.textContent = `${answ1}`
@@ -38,5 +36,22 @@ function getRandomAnswer () {
     
 }
 getRandomAnswer ()
+
+function getError () {
+    let n = Math.ceil(Math.random() * 3)
+    arrClass = [
+        'answer2__order3',
+        'answer2__order1',
+        'answer2__order2'
+    ]
+    answer2.classList.toggle(`${arrClass[n]}`)
+}
+
+answer2.addEventListener("click", getRandomQuestion)
+answer2.addEventListener("click", getRandomAnswer)
+answer1.addEventListener("click", getError)
+answer3.addEventListener("click", getError)
+
+
 
 
